@@ -1,9 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-def home(request):
-    return HttpResponse('<h1>Host Home</h1>')
+guests = [
+    {
+        'guestName': 'Ruth poop asdfa sdf',
+        'ID': '1',
+        'tokens': '1'
+        },
+    {
+        'guestName': 'Michelliot',
+        'ID': '2',
+        'tokens': '1'
+        },
+    {
+        'guestName': 'Gummy Bear',
+        'ID': '3',
+        'tokens': '1'
+        }
+    ]
 
-def about(request):
-    return HttpResponse('<h1>About</h1>')
+
+
+
+# Create your views here.
+def createEvent(request):
+    return render(request, 'host/createEvent.html')
+
+def guestList(request):
+    context = {
+        'guests': guests
+        }
+    return render(request, 'host/guestList.html', context)

@@ -1,0 +1,13 @@
+{% extends "host/base.html" %}
+{% block head %}
+    <title>Event Editor</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="box">
+        {% for guest in guests %}
+        <h3 style="color:white">{{ guest.guestName }}</h3>
+        <p style="color:white">Token: {{ guest.ID }} Redeemable {{ guest.tokens }} times</p>
+        {% endfor %}
+    </div>
+{% endblock content %}
