@@ -1,33 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-guests = [
-    {
-        'guestName': 'Ruth poop asdfa sdf',
-        'ID': '1',
-        'tokens': '1'
-        },
-    {
-        'guestName': 'Michelliot',
-        'ID': '2',
-        'tokens': '1'
-        },
-    {
-        'guestName': 'Gummy Bear',
-        'ID': '3',
-        'tokens': '1'
-        }
-    ]
-
-
+from .models import Event
 
 
 # Create your views here.
 def createEvent(request):
     return render(request, 'host/createEvent.html')
 
-def guestList(request):
+def viewEvent(request):
     context = {
-        'guests': guests
+        'events': Event.objects.all()
         }
-    return render(request, 'host/guestList.html', context)
+    return render(request, 'host/viewEvent.html', context)
