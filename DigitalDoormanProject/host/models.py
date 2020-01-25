@@ -5,7 +5,7 @@ class Event(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     eventID = models.IntegerField()
-    event_slug = models.CharField(max_Length=200, default=1)
+    event_slug = models.CharField(max_length=200, default=1)
 
     class meta:
         verbose_name_plural = "Events"
