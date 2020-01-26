@@ -1,0 +1,20 @@
+{% extends "host/base.html" %}
+{% block head %}
+	<title>Host Home</title>
+{% endblock head %}
+
+
+{% block content %}
+	<form action="/admin/" method="post">
+		<label for="ename" style="color:white">Event Name</label>
+		<input type="text" id="ename" name="ename" placeholder="The event name.." value="{{ eventNameInput}}">
+
+		<label for="ename" style="color:white">Custom Event ID (Leave blank if you dont care)</label>
+		<input type="text" id="eid" name="eid" placeholder="Enter letters or numbers.." value="{{ eventIDInput}}">
+
+		<center>
+			<input type="submit" value="Submit">
+		</center>
+	</form>
+{% endblock content %}
+

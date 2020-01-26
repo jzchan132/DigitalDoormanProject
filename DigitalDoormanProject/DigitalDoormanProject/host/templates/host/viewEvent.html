@@ -1,0 +1,17 @@
+{% extends "host/base.html" %}
+{% block head %}
+    <title>Event Editor</title>
+{% endblock head %}
+
+
+{% block content %}
+    {% for event in events %}
+        <article class="media content-section">
+            <div class="media-body">
+                <h4 style="color:white">{{ event.title }}</h4>
+                <p style="color:white">Event ID: {{ event.eventID }}</p>
+                <button onclick="window.location.href = '/host/guestList';" style="margin-bottom:15px">View Guest List</button>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
