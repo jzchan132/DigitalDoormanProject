@@ -1,0 +1,14 @@
+{% extends "host/base.html" %}
+{% block head %}
+<title>Logout</title>
+{% endblock head %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<h4 style="color:white">You have been logged out</h4>
+<div class="col-md-8">
+        <div class="form-group">
+            <button onclick="window.location.href = '/'">Back to Home</button>
+        </div>
+</div>
+    {% endblock content %}

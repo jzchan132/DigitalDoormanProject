@@ -8,8 +8,8 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, F'Account Created. Welcome {username}!')
-            return redirect('homePage')
+            messages.success(request, F'Account Created! Please login now.')
+            return redirect('login')
     else:
         form = UserForm()
     
